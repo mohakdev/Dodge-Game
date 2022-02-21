@@ -4,18 +4,14 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    ParticleSystem particle;
-    private void Awake()
-    {
-        particle = GetComponentInChildren<ParticleSystem>();
-    }
+    public ParticleSystem particle;
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.gameObject.name == "Player" || other.gameObject.name == "Ground")
         {
-            Instantiate(particle, transform.position, transform.rotation);
+            ParticleSystem ClonedParticle = Instantiate(particle, transform.position, transform.rotation);
+            ClonedParticle.gameObject.SetActive(true);
             Destroy(gameObject);
         }
     }
-
 }
