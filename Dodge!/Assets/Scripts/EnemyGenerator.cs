@@ -13,7 +13,7 @@ public class EnemyGenerator : MonoBehaviour
     {
         while (true)
         {
-            Vector3 SpawnPos = new Vector3(Random.Range(-7, 8), 18, 0);
+            Vector3 SpawnPos = new Vector3(Random.Range(-7, 8), transform.position.y, 0);
             GameObject ClonedEnemy = Instantiate(Enemy, SpawnPos, transform.rotation);
             yield return new WaitForSeconds(1);
         }

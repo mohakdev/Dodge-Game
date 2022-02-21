@@ -29,10 +29,6 @@ public class Player : MonoBehaviour
             //This code will make player jump
             mybody.AddForce(new Vector2(0f, JumpPower), ForceMode2D.Impulse);
         }
-        if (Health <= 0)
-        {
-            //Kill the player
-        }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -43,6 +39,10 @@ public class Player : MonoBehaviour
         if (other.gameObject.name == "Enemy(Clone)")
         {
             Health -= 35;
+            if (Health <= 0)
+            {
+                //Kill the player
+            }
         }
     }
 }
