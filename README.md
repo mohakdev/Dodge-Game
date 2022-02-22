@@ -14,4 +14,10 @@ Well the main objective in the game is to dodge falling rectangles. I know its p
 
 ![Paused](https://i.imgur.com/BYunDEL.png)
 
+---
+
+### So how to download the game ??
+**NOTE: The game is only available on Windows as of right now.** 
+[Download the game](https://radiantgames.itch.io/dodgegame)
+Here are the steps to download :arrow_down_small:
 
