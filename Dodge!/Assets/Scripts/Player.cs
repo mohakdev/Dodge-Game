@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
             if (Health <= 0)
             {
                 //Kill the player
+                SceneManager.LoadScene("Main Menu");
             }
         }
     }
