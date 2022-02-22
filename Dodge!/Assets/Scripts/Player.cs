@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public ScoreScript myscore;
+    public HealthBarScript healthBar;
 
     [Header("Player Settings :")]
     public int speed;
-    public int Health = 100;
+    public int Health;
     public int JumpPower;
     public bool isGrounded = true;
     private Rigidbody2D mybody;
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
         if (other.gameObject.name == "Enemy(Clone)")
         {
             Health -= 35;
+            healthBar.SetHealthBar(Health);
             if (Health <= 0)
             {
                 myscore.SetHighScore();
