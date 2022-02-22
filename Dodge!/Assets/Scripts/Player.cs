@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
+    public ScoreScript myscore;
+
     [Header("Player Settings :")]
     public int speed;
     public int Health = 100;
@@ -42,7 +44,7 @@ public class Player : MonoBehaviour
             Health -= 35;
             if (Health <= 0)
             {
-                //Kill the player
+                myscore.SetHighScore();
                 SceneManager.LoadScene("Main Menu");
             }
         }

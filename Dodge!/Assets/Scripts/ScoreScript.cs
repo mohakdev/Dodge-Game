@@ -6,7 +6,6 @@ public class ScoreScript : MonoBehaviour
 {
     public float Score;
     public int IncrementPerFrame;
-    //float HighScore;
     Text ScoreLabel;
     private void Awake()
     {
@@ -17,5 +16,13 @@ public class ScoreScript : MonoBehaviour
         Score += IncrementPerFrame * Time.deltaTime;
         int DisplayScore = ((int)Score);
         ScoreLabel.text = "SCORE: " + DisplayScore;
+    }
+    public void SetHighScore()
+    {
+        int Highscore = PlayerPrefs.GetInt("HS", 0);
+        if (Highscore < Score)
+        {
+            PlayerPrefs.SetInt("HS", ((int)Score));
+        }
     }
 }
